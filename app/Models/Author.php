@@ -4,19 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
-class Book extends Model
+class Author extends Model
 {
     use HasFactory;
-
     protected $guarded=[];
 
+    protected $dates=['DOB'];
+
     protected $fillable=[
-        'title', 'author'
+        'name', 'DOB'
     ];
 
-    // public function path()
-    // {
-    //     return '/books/' . $this->id;
-    // }
+    public function setDOBAttribute($DOB){
+        $this->attributes['DOB']=Carbon::parse($DOB);
+    }
 }
