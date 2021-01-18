@@ -17,7 +17,7 @@ use App\Http\Controllers\AuthorsController;
 
 Route::post('/books', [BooksController::class, 'store']);
 
-Route::patch('/books/{id}', [BooksController::class, 'edit']);
+Route::patch('/books/{id}', [BooksController::class, 'update']);
 
 Route::delete('/books/{id}', [BooksController::class, 'destroy']);
 

@@ -9,15 +9,12 @@ use Carbon\Carbon;
 class Author extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+    protected $guarded = [];
 
-    protected $dates=['DOB'];
+    protected $dates = ['dob'];
 
-    protected $fillable=[
-        'name', 'DOB'
-    ];
-
-    public function setDOBAttribute($DOB){
-        $this->attributes['DOB']=Carbon::parse($DOB);
+    public function setDobAttribute($dob)
+    {
+        $this->attributes['dob'] = Carbon::parse($dob);
     }
 }
